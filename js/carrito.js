@@ -49,13 +49,26 @@ const pintarCarrito = () => {
     productosDelCarrito.append(compraTotal);
 
     const pagar = document.createElement("button");
-    pagar.className = "irAPagar";
+    pagar.className = "total-content";
     pagar.innerHTML = `Ir a pagar`;
-    pagar ();
 
+    productosDelCarrito.append(pagar);
 
-    pintarCarrito.append (pagar);
-};
+    pagar.addEventListener ("click", () =>{
+        swal.fire({
+            title: `Estas por confirmar el pedido`, 
+            text: `¿Esta seguro de que quiere finalizar?`,
+            icon: `warning`,
+            showCancelButton: true,
+            confirmButtonText: `Finalizar compra`,
+            cancelButtonText: `No, quiero seguir comprando` 
+        }).then((respuesta) => {
+            if(respuesta.isConfirmed) {
+                location.href = "../Secciones/pago.html"
+            }
+        });
+    });
+}
 
 miCarrito.addEventListener ("click", pintarCarrito);
 
@@ -82,5 +95,4 @@ const productosParaComprar = () => {
 };
 
 productosParaComprar ();
-
 
