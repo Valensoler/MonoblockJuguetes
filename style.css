@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Poppins:wght@200&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+.navbar a {
+  font-size: 25px;
+  color: #fff;
+}
+
+.ver-carrito{
+  margin-left: 700px;
+  font-size: 40px;
+}
+
+.productos-pedidos{
+  border: 2px solid #000;
+  border-radius: 40%;
+  font-size: 15px;
+  padding: 2px;
+  top: 38px;
+  right: 100px;
+  position: absolute;
+  display: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  background-color: #fff;
+}
+
+.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(./fotos/formasbasicas.jpg);
+  background-size: cover;
+  height: 350px;
+  background-position: center;
+  color: aliceblue;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+h1{
+  font-size: 40px;
+  color: #fff;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.descripcion{
+  font-size: 20px;
+  color: #fff;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+h3 {
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.7);
+  padding: 20px;
+  margin: 0;
+}
+
+h3 {
+    animation-duration: 3s;
+    animation-name: aparecer1;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes aparecer1 {
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.tienda-online {
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 500px);
+  grid-gap: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.cards{
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+.card, h6{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(211, 35, 35, 0.5);
+    margin-top: 0;
+}
+
+
+.cards, img{
+  width: 100%;
+  height: 300px;
+}
+
+.precio{
+  color:rgba(211, 35, 35, 0.5);
+  font-size: 20px;
+  margin: 3px;
+}
+
+.cards button{
+  border: 2px solid #000;
+  color: #fff;
+  background-color: rgba(211, 35, 35, 0.5);
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+}
+
+.cards button:hover{
+  opacity: 0.3;
+}
+
+.subir {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(211, 35, 35, 0.5);
+  border: 4px solid #fff;
+  right: 20px;
+  bottom: 20px;
+  line-height: 45px;
+  border-radius: 50%;
+  position: fixed;
+  box-shadow: 2px 2px 10px #000;
+}
+
+.productos-del-carrito{
+  width: 80%;
+  margin: 0 9%;
+  max-height: 88vh;
+  color: #fff;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  overflow: auto;
+  z-index: 9;
+  top: 12vh;
+  scrollbar-color: none;
+}
+
+.productos-del-carrito::-webkit-scrollbar{
+  display: none;
+}
+
+.contenidoCarrito{
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+  background-color: #000;
+  width: 100%;
+}
+
+.contenidoCarrito-item{
+  justify-self: start;
+}
+
+.modal-header-button{
+  cursor: pointer;
+}
+
+.containerCarrito > .todoElCarrito{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  margin: 5px;
+}
+
+.producto{
+  color: #fff;
+  background-color: rgba(235, 51, 51, 0.8);
+  margin-top: 5px;
+}
+
+.containerCarrito > div > img{
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+.precioDelProducto{
+  font-size: 35px;
+  color: #fff;
+  background-color: rgba(235, 51, 51, 0.8);
+  text-align: center;
+}
+
+.cantidades{
+  font-size: 20px;
+  color: #fff;
+  background-color: rgba(235, 51, 51, 0.8);
+  text-align: center;
+}
+
+.total{
+  display: none;
+}
+
+.delete-product {
+  cursor: pointer;
+  font-size: 30px;
+  margin-left: 130px;
+}
+
+.total-content{
+  font-size: 30px;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(235, 51, 51, 0.8);
+  padding-top: 20px;
+}
+
+.irAPagar{
+  border: 2px solid #000;
+  color: #fff;
+  background-color: rgba(211, 35, 35, 0.5);
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+}
+
+h2{
+  font-size: 50px;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+h4{
+  font-size: 35px;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.7);
+  padding: 20px;
+  margin: 0;
+}
+
+h4{
+    animation-duration: 3s;
+    animation-name: aparecer1;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.datos{
+  color: rgba(241, 68, 68, 0.8);
+  font-size: 20px;
+  font-family:'Times New Roman', Times, serif;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.datos{
+  display: inline;
+}
+
+ol li .nombre{
+  text-decoration: none;
+  display: inline;
+}
+
+.tarjeta{
+  color: rgba(241, 68, 68, 0.8);
+  font-size: 25px;
+  font-family:'Times New Roman', Times, serif;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.tarjeta{
+  display: inline;
+}
+
+ul li .lugar{
+  text-decoration: none;
+  display: inline;
+}
+
+.finalizar{
+  font-size: 25px;
+  height: 90px;
+  font-family:'Times New Roman', Times, serif;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.ok{
+  background-color: #fff;
+  width: 90px;
+  height: 50px;
+}
+
+.ok:hover{
+  background-color: rgba(241, 68, 68, 0.8);
+}
+
+footer {
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
+  height: auto;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(255, 0, 0, 0.7);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(./fotos/formasbasicas.jpg);
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 0 5px 1px #fff;
+  padding: 15px;
+}
+footer a {
+  color: #fff;
+  letter-spacing: 50px;
+  font-size: 50px;
+}
+footer a :hover {
+  color: rgba(211, 35, 35, 0.5);
+}
+

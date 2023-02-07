@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="shortcut icon" href="../fotos/logo2.png">
+    <link rel="stylesheet" href="../style.css">
+    <title>Monoblock Juguetes</title>
+</head>
+<body>
+    <div class="banner">
+        <h2>¡Último paso para finalizar tu compra!</h2>
+    </div>
+
+        <h4> Ingresa tus datos</h4>
+        <form action="enviar.php" method="post" enctype="text/plain" netlify>
+        <ol type="circle">
+            <div class="datos">
+                <li class="nombre"><label for="names"> Nombres</label></li>
+                <li class="nombre"><input id="names" name="names" type="text" required></li>
+                <li class="nombre"><label for="apellidos"> Apellidos </label></li>
+                <li class="nombre"><input id="apellidos" name="apellidos" type="text" required></li>
+                <li class="nombre"><label for="telefono"> Telefono de contacto</label></li>
+                <li class="nombre"><input id="telefono" name="telefono" type="text" required></li>
+                <li class="nombre"><label for="edad"> Edad </label></li>
+                <li class="nombre"><input id="edad" name="edad" type="text" required></li>
+            </div>
+        </ol>
+
+        <h4> Ingresa una nueva tarjeta </h4>
+        <div class="tarjeta">
+            <ul>
+                <h5>Numero de tarjeta</h5>
+                <li class="lugar"><input id="text" name="text" type="text" required></li>
+                <h5>Nombres y apellidos del titular de la tarjeta</h5>
+                <li class="lugar"><input id="text" name="text" type="text" required></li>
+                <h5>Fecha de expiracion</h5>
+                <li class="lugar"><input id="text" name="text" type="text" required></li>
+                <h5>Codigo de seguridad</h5>
+                <li class="lugar"><input id="text" name="text" type="text" required></li>
+                <h5>DNI del titular de la tarjeta</h5>
+                <li class="lugar"><input id="text" name="text" type="text" required></li>
+            </ul>
+        </div>
+        
+        <div class=finalizar>
+            <input type="submit" class="ok">
+        </div>
+
+        <a href="#" class="subir">
+            <i class="fa-solid fa-caret-up"></i>
+        </a>
+
+        <footer>
+            <p><marquee behavior="scroll" direction="right"> Todos los derechos reservados por copyright </marquee></p>
+            <div class="redes">
+                <a href="https://es-la.facebook.com/monoblock.juguetes/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/monoblock_juguetes/?hl=es-la"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </footer>
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../js/formulario.js"></script>
+</body>
+</html>
