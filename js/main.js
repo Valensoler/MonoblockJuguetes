@@ -6,22 +6,27 @@ const productosDelCarrito = document.getElementById("productosDelCarrito");
 const productosPedidos = document.getElementById ("productosPedidos");
 let carrito = JSON.parse (localStorage.getItem ("productos")) || [];
 
-productos.forEach ((product) => {
-    let contenedor = document.createElement ("div");
-    contenedor.className = "cards";
-    contenedor.innerHTML = `
-    <h6> ${product.nombre} </h6>
-    <img src = "${product.img}">
-    <p class="precios"> $ ${product.precio} </p>
-    `;
+const listadoProductos = "js/productos.json";
 
-    tienda.append (contenedor);
+fetch (listadoProductos)
+    .then (respuesta => respuesta.json ())
+    .then (datos =>{
+        datos.forEach (product => {
+            tienda.innerHTML = `
+                                <h6> ${product.nombre} </h6>
+                                <img src = "${product.img}">
+                                <p class="precios"> $ ${product.precio} </p>
+                                `;
+        })
+    })
+
+    tienda.append (listadoProductos);
 
     let agregar = document.createElement ("button")
     agregar.className = "agregar";
     agregar.innerText= "Agregar al carrito";
 
-    contenedor.append (agregar);
+    tienda.append (agregar);
 
     agregar.addEventListener ("click", () => {
     
@@ -45,7 +50,7 @@ productos.forEach ((product) => {
     productosParaComprar ();
     guardarLocal ();
     });
-});
+
 
 const guardarLocal = () => {
     localStorage.setItem("productos", JSON.stringify (carrito));
