@@ -29,14 +29,13 @@ const pintarCarrito = () => {
             <p class= "total">Total: ${product.cantidad * product.precio} </p>        
         `;     
         productosDelCarrito.append(todoElCarrito);
-                
 
         let eliminar = document.createElement ("span");
         eliminar.innerText = "❌";
         eliminar.className = "delete-product";
-        todoElCarrito.append (eliminar);
 
         eliminar.addEventListener ("click", eliminarProducto);
+        todoElCarrito.append (eliminar);
     });
 
     const total = carrito.reduce ((acc, el) => {

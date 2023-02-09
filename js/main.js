@@ -4,50 +4,50 @@ const contenidoDelCarrito= document.createElement("div");
 const botonEliminar = document.createElement("h4");
 const productosDelCarrito = document.getElementById("productosDelCarrito");
 const productosPedidos = document.getElementById ("productosPedidos");
-const agregar = document.createElement ("button");
 let carrito = JSON.parse (localStorage.getItem ("productos")) || [];
 
 const listadoProductos = "js/productos.json";
 
 fetch (listadoProductos)
     .then (respuesta => respuesta.json ())
-    .then (datos => {
+    .then (datos =>{
         datos.forEach (product => {
             const divProductos = document.createElement ("div")
             divProductos.innerHTML = `
                                 <h6> ${product.nombre} </h6>
                                 <img src = "${product.img}">
                                 <p class="precios"> $ ${product.precio} </p>
-                                <button> ${"Agregar al carrito"} </button>
+                                <button id = "btn"> Agregar al carrito </button>
                                 `;
-                                
-                                divProductos.append (agregar)
-                                tienda.append (divProductos);
-        })
+            tienda.append (divProductos)
+        }) 
+        const nuevoBtn = document.getElementById ("btn")
 
-    agregar.addEventListener ("click", () => {
-    
-    const repetido = carrito.some ((productoRepetido) => productoRepetido.id === product.id);
+        nuevoBtn.addEventListener("click", () => {
 
-    if (repetido === true){
-        carrito.map ((prod) => {
-            if (prod.id === product.id) {
-                prod.cantidad++;
-            }
-        })
-    }else {
-        carrito.push ({
-            img: product.img,
-            nombre: product.nombre,
-            precio: product.precio,
-            cantidad: product.cantidad,
-        });
-    }
-    productosParaComprar ();
-    guardarLocal ();
-});
+        const repetido = carrito.some ((productoRepetido) => productoRepetido.id === product.id);
+        
+        if (repetido === true){
+
+            carrito.map ((prod) => {
+                if (prod.id === product.id) {
+                    prod.cantidad++;
+                }
+            })
+        }else {
+            carrito.push ({
+                id : product.id,
+                img: product.img,
+                nombre: product.nombre,
+                precio: product.precio,
+                cantidad: product.cantidad,
+            });
+        }
+        productosParaComprar ();
+        guardarLocal ();
+    });
 
     const guardarLocal = () => {
         localStorage.setItem("productos", JSON.stringify (carrito));
     };
-})
+});
