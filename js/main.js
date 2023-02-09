@@ -4,29 +4,26 @@ const contenidoDelCarrito= document.createElement("div");
 const botonEliminar = document.createElement("h4");
 const productosDelCarrito = document.getElementById("productosDelCarrito");
 const productosPedidos = document.getElementById ("productosPedidos");
+const agregar = document.createElement ("button");
 let carrito = JSON.parse (localStorage.getItem ("productos")) || [];
 
 const listadoProductos = "js/productos.json";
 
 fetch (listadoProductos)
     .then (respuesta => respuesta.json ())
-    .then (datos =>{
+    .then (datos => {
         datos.forEach (product => {
-            tienda.innerHTML = `
+            const divProductos = document.createElement ("div")
+            divProductos.innerHTML = `
                                 <h6> ${product.nombre} </h6>
                                 <img src = "${product.img}">
                                 <p class="precios"> $ ${product.precio} </p>
+                                <button> ${"Agregar al carrito"} </button>
                                 `;
+                                
+                                divProductos.append (agregar)
+                                tienda.append (divProductos);
         })
-    })
-
-    tienda.append (listadoProductos);
-
-    let agregar = document.createElement ("button")
-    agregar.className = "agregar";
-    agregar.innerText= "Agregar al carrito";
-
-    tienda.append (agregar);
 
     agregar.addEventListener ("click", () => {
     
@@ -40,7 +37,6 @@ fetch (listadoProductos)
         })
     }else {
         carrito.push ({
-            id : product.id,
             img: product.img,
             nombre: product.nombre,
             precio: product.precio,
@@ -49,10 +45,9 @@ fetch (listadoProductos)
     }
     productosParaComprar ();
     guardarLocal ();
-    });
+});
 
-
-const guardarLocal = () => {
-    localStorage.setItem("productos", JSON.stringify (carrito));
-};
-
+    const guardarLocal = () => {
+        localStorage.setItem("productos", JSON.stringify (carrito));
+    };
+})
