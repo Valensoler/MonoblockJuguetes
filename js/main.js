@@ -26,7 +26,7 @@ fetch (listadoProductos)
         nuevoBtn.addEventListener("click", () => {
 
         const repetido = carrito.some ((productoRepetido) => productoRepetido.id === product.id);
-        
+
         if (repetido === true){
 
             carrito.map ((prod) => {
@@ -51,3 +51,10 @@ fetch (listadoProductos)
         localStorage.setItem("productos", JSON.stringify (carrito));
     };
 });
+
+let arrayGlobal = []
+fetch(productos.json)
+    .then(resp=>resp.json())
+    .then(productos=> arrayGlobal=productos)
+
+arrayGlobal.forEach((prod)=>console.log(prod))
