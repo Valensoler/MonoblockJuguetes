@@ -18,15 +18,15 @@ const pintarCarrito = () => {
 
     contenidoDelCarrito.append(botonEliminar);
 
-    carrito.forEach((product) => {
+    carritoDelUsuario.forEach((productos) => {
         let todoElCarrito = document.createElement("div");
         todoElCarrito.className = "containerCarrito";
         todoElCarrito.innerHTML = `
-            <h6 class = "producto">${product.nombre}</h6>
-            <img src="${product.img}">
-            <p class ="precioDelProducto"> $ ${product.precio}</p>
-            <p class = "cantidades"> Cantidad: ${product.cantidad}</p>
-            <p class= "total">Total: ${product.cantidad * product.precio} </p>        
+            <h6 class = "producto">${productos.nombre}</h6>
+            <img src="${productos.img}">
+            <p class ="precioDelProducto"> $ ${productos.precio}</p>
+            <p class = "cantidades"> Cantidad: ${productos.cantidad}</p>
+            <p class= "total">Total: ${productos.cantidad * productos.precio} </p>        
         `;     
         productosDelCarrito.append(todoElCarrito);
 
@@ -38,7 +38,7 @@ const pintarCarrito = () => {
         eliminar.addEventListener ("click", eliminarProducto);
     });
 
-    const total = carrito.reduce ((acc, el) => {
+    const total = carritoDelUsuario.reduce ((acc, el) => {
         return acc + el.precio * el.cantidad
     }, 0);
 
